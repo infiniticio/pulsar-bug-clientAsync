@@ -18,7 +18,7 @@ public class Client {
 
             Producer<byte[]> producer = client.newProducer().topic("my-topic").create();
 
-            producer.send("My message".getBytes());
+            producer.sendAsync("My message".getBytes());
 
             client.close();
         } catch (PulsarClientException e){
